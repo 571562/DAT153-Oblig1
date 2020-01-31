@@ -20,17 +20,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onclickData(View view) {
-        Intent intent = new Intent(this, MainData.class);
+        Intent intent = new Intent(this, DatabaseActivity.class);
         startActivity(intent);
     }
 
     public void onclickQuiz(View view) {
-        Intent intent = new Intent(this, MainQuiz.class);
+        Intent intent = new Intent(this, QuizActivity.class);
         startActivity(intent);
     }
 
     public void onclickAdd(View view) {
-        Intent intent = new Intent(this, MainAdd.class);
+        Intent intent = new Intent(this, AddActivity.class);
         startActivity(intent);
     }
 
