@@ -1,6 +1,9 @@
 package com.example.oblig1;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -9,40 +12,28 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private SharedPreferences pref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initImages();
     }
 
-    public MainActivity() {
-    }
-
-    public void startQuiz(View view) {
-        Intent intent = new Intent(this, QuizActivity.class);
+    public void onclickData(View view) {
+        Intent intent = new Intent(this, MainData.class);
         startActivity(intent);
     }
-    public void gotoDB(View view) {
-        Intent intent = new Intent(this, DatabaseActivity.class);
+
+    public void onclickQuiz(View view) {
+        Intent intent = new Intent(this, MainQuiz.class);
         startActivity(intent);
     }
-    public void gotoAdd(View v){
-        Intent intent = new Intent(this, AddImages.class);
+
+    public void onclickAdd(View view) {
+        Intent intent = new Intent(this, MainAdd.class);
         startActivity(intent);
-
     }
 
-    private void initImages(){
-        Image img1 = new Image("Ragdoll", Uri.parse("android.resource://com.example.oblig1/"+R.drawable.katt1));
-        Image img2 = new Image("Grumpy", Uri.parse("android.resource://com.example.oblig1/"+R.drawable.katt2));
-        ((GlobalStorage) this.getApplication()).addImage(img1);
-        ((GlobalStorage) this.getApplication()).addImage(img2);
 
 
-        for(int i = 0;i<((GlobalStorage) this.getApplication()).getImages().size();i++){
-            System.out.println(((GlobalStorage) this.getApplication()).getImages().get(i));
-        }
-
-    }
 }

@@ -5,4 +5,12 @@
     <string name="button3">Add</string>
     <string name="katt1">Pus</string>
     <string name="katt2">GrumpyCat</string>
+    <string name="hint">Name</string>
+    <string name="remove">Remove</string>
+
+    <string-array name="name">
+        <item>Ragdoll</item>
+        <item>Grumpy</item>
+    </string-array>
+
 </resources>
